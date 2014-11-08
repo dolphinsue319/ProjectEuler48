@@ -14,6 +14,9 @@
 		4A831B061A0476ED0052A9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A831B051A0476ED0052A9A2 /* Images.xcassets */; };
 		4A831B091A0476ED0052A9A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A831B071A0476ED0052A9A2 /* LaunchScreen.xib */; };
 		4A831B151A0476ED0052A9A2 /* ProjectEuler48Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A831B141A0476ED0052A9A2 /* ProjectEuler48Tests.m */; };
+		4A831B201A047C710052A9A2 /* ProjectEuler48Solver.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A831B1F1A047C710052A9A2 /* ProjectEuler48Solver.m */; };
+		4A831B231A047D700052A9A2 /* JKBigInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A831B221A047D700052A9A2 /* JKBigInteger.m */; };
+		6D7F7209D0BC53BAB32B98B2 /* tommath.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F7BCCD667FD7A4344CF75 /* tommath.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,14 @@
 		4A831B0E1A0476ED0052A9A2 /* ProjectEuler48Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectEuler48Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A831B131A0476ED0052A9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A831B141A0476ED0052A9A2 /* ProjectEuler48Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectEuler48Tests.m; sourceTree = "<group>"; };
+		4A831B1E1A047C710052A9A2 /* ProjectEuler48Solver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectEuler48Solver.h; sourceTree = "<group>"; };
+		4A831B1F1A047C710052A9A2 /* ProjectEuler48Solver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectEuler48Solver.m; sourceTree = "<group>"; };
+		4A831B211A047D700052A9A2 /* JKBigInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKBigInteger.h; sourceTree = "<group>"; };
+		4A831B221A047D700052A9A2 /* JKBigInteger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKBigInteger.m; sourceTree = "<group>"; };
+		6D7F7061638C37E46DA756C7 /* tommath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath.h; sourceTree = "<group>"; };
+		6D7F728F82E639F39EC7EA2F /* tommath_superclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_superclass.h; sourceTree = "<group>"; };
+		6D7F74AFD49AE7414B71B7A6 /* tommath_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_class.h; sourceTree = "<group>"; };
+		6D7F7BCCD667FD7A4344CF75 /* tommath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tommath.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +96,15 @@
 				4A831AFD1A0476ED0052A9A2 /* AppDelegate.m */,
 				4A831AFF1A0476ED0052A9A2 /* ViewController.h */,
 				4A831B001A0476ED0052A9A2 /* ViewController.m */,
+				4A831B1E1A047C710052A9A2 /* ProjectEuler48Solver.h */,
+				4A831B1F1A047C710052A9A2 /* ProjectEuler48Solver.m */,
+				4A831B211A047D700052A9A2 /* JKBigInteger.h */,
+				4A831B221A047D700052A9A2 /* JKBigInteger.m */,
 				4A831B021A0476ED0052A9A2 /* Main.storyboard */,
 				4A831B051A0476ED0052A9A2 /* Images.xcassets */,
 				4A831B071A0476ED0052A9A2 /* LaunchScreen.xib */,
 				4A831AF81A0476ED0052A9A2 /* Supporting Files */,
+				6D7F77A2F12F3362A8E3A677 /* LibTomMath */,
 			);
 			path = ProjectEuler48;
 			sourceTree = "<group>";
@@ -117,6 +133,17 @@
 				4A831B131A0476ED0052A9A2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D7F77A2F12F3362A8E3A677 /* LibTomMath */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F7BCCD667FD7A4344CF75 /* tommath.c */,
+				6D7F7061638C37E46DA756C7 /* tommath.h */,
+				6D7F74AFD49AE7414B71B7A6 /* tommath_class.h */,
+				6D7F728F82E639F39EC7EA2F /* tommath_superclass.h */,
+			);
+			path = LibTomMath;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +246,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A831B201A047C710052A9A2 /* ProjectEuler48Solver.m in Sources */,
 				4A831B011A0476ED0052A9A2 /* ViewController.m in Sources */,
 				4A831AFE1A0476ED0052A9A2 /* AppDelegate.m in Sources */,
+				4A831B231A047D700052A9A2 /* JKBigInteger.m in Sources */,
 				4A831AFB1A0476ED0052A9A2 /* main.m in Sources */,
+				6D7F7209D0BC53BAB32B98B2 /* tommath.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

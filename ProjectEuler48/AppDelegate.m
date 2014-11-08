@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ProjectEuler48Solver.h"
 
 @interface AppDelegate ()
 
@@ -35,7 +36,9 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    ProjectEuler48Solver *solver = [[ProjectEuler48Solver alloc] init];
+    long summedValue = [solver sumEachModularToNumber:1000 digits:10];
+    NSLog(@"summed value: %li", summedValue);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
